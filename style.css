@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.body {
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  max-width: 1250px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.top-arrow {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  width: 70px;
+  height: 70px;
+  background-color: #1e90ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -2px -1px 17px 0px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: -2px -1px 17px 0px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: -2px -1px 17px 0px rgba(0, 0, 0, 0.38);
+  cursor: pointer;
+}
+/* .header========================================================================================= */
+.header {
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 35px;
+  font-size: 16px;
+}
+
+.link-navigation {
+  color: #8e126f;
+  position: relative;
+}
+.link-navigation::after {
+  position: absolute;
+  content: "";
+  top: 22px;
+  left: 0;
+  height: 3px;
+  background-color: #35b7f5;
+  width: 0;
+  transition: all 0.5s ease;
+}
+.link-navigation:hover:after {
+  width: 100%;
+}
+/* main =====================================================================================================*/
+.main {
+  width: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 100%,
+      rgba(0, 0, 0, 0.2) 80%,
+      rgba(0, 0, 0, 0)
+    ),
+    /* Градієнт */ url(http://anex.website/nox/themes/postely/img/bg_header.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+}
+main::after {
+  position: absolute;
+  content: "";
+  top: 35%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+.main-title {
+  font-size: 74px;
+  font-weight: 600;
+  padding-bottom: 40px;
+}
+.main-container {
+  margin: 0 auto;
+  max-width: 1730px;
+  padding: 0 15px;
+}
+.small-paragraph {
+  padding: 20px 0;
+  font-size: 22px;
+}
+.big-font {
+  font-size: 74px;
+  font-weight: 600;
+  padding-bottom: 40px;
+}
+.weight-font {
+  font-size: 44px;
+  font-weight: 500;
+}
+/* tab ====================================================================*/
+.tab-title-wrap {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 0 3px;
+}
+.tab-title-item {
+  padding: 20px 100px;
+  background-color: #35b7f5;
+  color: white;
+}
+.tab-wrapper {
+  margin-top: 50px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.block-tab {
+  border: 1px solid rgb(54, 52, 52);
+  padding: 2px;
+}
+.tab-title-item:hover,
+.tab-active {
+  color: white;
+  background-color: #1e90ff;
+  cursor: pointer;
+}
+.show {
+  display: flex;
+  justify-content: center;
+}
+.hite {
+  display: none;
+}
+.img-wpar {
+  width: 370px;
+  position: relative;
+  overflow: hidden;
+}
+.img-wpar img {
+  width: 100%;
+  height: 370px;
+  object-fit: contain;
+  transition: all 0.5s ease;
+}
+.img-wpar img:hover {
+  transform: scale(1.1);
+}
+/* .swiper-slide {
+  position: relative;
+} */
+.swiper-button-prev,
+.swiper-button-next {
+  font-weight: 800;
+}
+.content {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  padding: 0 5px;
+}
+.line {
+  width: 70%;
+  height: 1px;
+  background-color: black;
+  margin: 0 auto;
+}
+.name-product {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 700;
+}
+.description {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  padding-left: 10px;
+  padding-right: 5px;
+  max-width: 350px;
+}
+strong {
+  font-weight: 800;
+}
+.center {
+  margin-top: 5px;
+  text-align: center;
+}
+.red {
+  color: red;
+}
+.prise {
+  text-transform: uppercase;
+}
+.to-buy {
+  background-color: #1e90ff;
+  border: none;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.to-buy:hover {
+  background-color: #026eda;
+}
+.discount {
+  position: absolute;
+  left: 3%;
+  top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+}
+/* tab ====================================================================*/
+/* blue-block */
+.blue-block {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  background-color: #1e90ff;
+  margin: 50px 0;
+}
+.weight-span {
+  font-weight: 600;
+}
+.our-advantages-title {
+  text-align: center;
+  font-size: 40px;
+  color: #444;
+  margin-bottom: 20px;
+}
+.advantages-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  align-items: baseline;
+}
+.img-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px 0;
+  color: #666;
+  width: 380px;
+}
+.blue-foto-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #1e90ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.small-line {
+  width: 70%;
+  height: 1px;
+  text-align: center;
+  background-color: #95407b;
+}
+.name-title {
+  font-size: 20px;
+}
+.name-paragraph {
+  font-size: 14px;
+  max-width: 380px;
+  line-height: 20px;
+  text-align: center;
+}
+.reviews {
+  width: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 100%,
+      rgba(0, 0, 0, 0.2) 80%,
+      rgba(0, 0, 0, 0)
+    ),
+    url(http://anex.website/nox/themes/postely/img/44.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 30px;
+  color: white;
+  margin-bottom: 50px;
+}
+.reviews-title {
+  padding: 15px 0;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 600;
+}
+.last-swiper-wrapper {
+  margin: 50px auto;
+}
+.lastSwiper {
+  text-align: center;
+  display: flex;
+}
+.paragraph-reviews {
+  margin: 15px 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+.last-swiper-wrapper img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+}
+.last-swiper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+}
+.big {
+  width: 50%;
+  margin: 10px auto;
+}
+.no-wrap {
+  padding: 15px;
+  flex-wrap: nowrap;
+}
+.big-font {
+  font-size: 18px;
+  font-weight: 400;
+}
+.last-block {
+  width: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 100%,
+      rgba(0, 0, 0, 0.2) 80%,
+      rgba(0, 0, 0, 0)
+    ),
+    url(./images/fone.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-top: 30px;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+}
+.last-title {
+  width: 100%;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 18px;
+  border-bottom: 1px solid white;
+}
+.last-paragraph {
+  margin-top: 15px;
+  padding-top: 15px;
+  font-size: 28px;
+  font-weight: 500;
+}
+/* footer ==============================================================*/
+.footer {
+  background-color: #1e90ff;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+.footer-paragraph {
+  font-size: 12px;
+  margin-top: 10px;
+}
+.footer-link {
+  display: block;
+  margin-top: 15px;
+  font-size: 18px;
+  color: white;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
