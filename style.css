@@ -71,11 +71,11 @@ a {
   width: 100%;
   background-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.8) 100%,
+      rgba(0, 0, 0, 0.6) 100%,
       rgba(0, 0, 0, 0.2) 80%,
       rgba(0, 0, 0, 0)
     ),
-    /* Градієнт */ url(http://anex.website/nox/themes/postely/img/bg_header.jpg);
+    url(./images/2149551400.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -308,11 +308,11 @@ strong {
   width: 100%;
   background-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.5) 100%,
+      rgba(0, 0, 0, 0.7) 100%,
       rgba(0, 0, 0, 0.2) 80%,
       rgba(0, 0, 0, 0)
     ),
-    url(http://anex.website/nox/themes/postely/img/44.png);
+    url(./images/curtain-window.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
