@@ -33,6 +33,7 @@ a {
   -webkit-box-shadow: -2px -1px 17px 0px rgba(0, 0, 0, 0.38);
   -moz-box-shadow: -2px -1px 17px 0px rgba(0, 0, 0, 0.38);
   cursor: pointer;
+  z-index: 3;
 }
 /* .header========================================================================================= */
 .header {
@@ -190,7 +191,8 @@ main::after {
   text-align: center;
   text-transform: uppercase;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 600;
+  color: #444;
 }
 .description {
   text-align: left;
@@ -202,17 +204,25 @@ main::after {
   max-width: 350px;
 }
 strong {
-  font-weight: 800;
+  color: #444;
+  font-weight: 700;
 }
 .center {
   margin-top: 5px;
   text-align: center;
 }
 .red {
-  color: red;
+  text-decoration: line-through;
+  font-weight: 200;
 }
 .prise {
   text-transform: uppercase;
+  font-size: 24px;
+}
+.prise-container {
+  display: flex;
+  justify-content: center;
+  gap: 0px 50px;
 }
 .to-buy {
   background-color: #1e90ff;
@@ -414,4 +424,7 @@ strong {
 }
 .footer-link:hover {
   text-decoration: underline;
+}
+.hidden {
+  display: none;
 }
