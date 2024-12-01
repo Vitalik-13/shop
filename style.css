@@ -543,4 +543,7 @@ strong {
     transform: translateX(0);
     transition: all 0.5s ease;
   }
+  .loader {
+    top: 1%;
+  }
 }
