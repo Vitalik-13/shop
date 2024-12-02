@@ -141,9 +141,8 @@ a {
   overflow: hidden;
 }
 .article {
-  font-size: 18px;
+  font-size: 0;
   font-weight: 600;
-  margin-top: 15px;
 }
 /* modal-window=================================================================================== */
 /* .header========================================================================================= */
@@ -628,6 +627,7 @@ strong {
     align-items: flex-start;
   }
 }
+
 @media (max-width: 550px) {
   .navigation {
     display: none;

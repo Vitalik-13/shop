@@ -156,7 +156,7 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
     // видалити це для первірки
-    console.log("Форма була надіслана");
+    // console.log("Форма була надіслана");
     // видалити це для первірки
 
     const orderData = {
@@ -165,11 +165,10 @@ document
       price: modalWindowPrice.textContent.trim(),
       name: document.querySelector("#clientName").value.trim(),
       phone: document.querySelector("#clientPhone").value.trim(),
-      comment: document.querySelector("#clientComment").value.trim(),
     };
     // ===========================================================
     //  після відправки форма закривається, і рядки очищуються, цей код можна буде видалити, це для перевірки
-    console.log("Дані для відправки:", orderData);
+    // console.log("Дані для відправки:", orderData);
 
     document.querySelector("#orderForm").reset();
 
@@ -181,21 +180,30 @@ document
     //     // ======================================================
     //     // це розкоментувати, для надсилання даних на php файл
 
-    //     // const form = document.createElement("form");
-    //     // form.method = "POST";
-    //     // form.action = "success-final.php";
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = "thank-you.php";
 
-    //     // for (const key in orderData) {
-    //     //   const input = document.createElement("input");
-    //     //   input.type = "hidden";
-    //     //   input.name = key;
-    //     //   input.value = orderData[key];
-    //     //   form.appendChild(input);
-    //     // }
+    for (const key in orderData) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = orderData[key];
+      form.appendChild(input);
+    }
 
-    //     //
-    //     // document.body.appendChild(form);
-    //     // form.submit();
+    document.body.appendChild(form);
+    form.submit();
     //     // це розкоментувати, для надсилання даних на php файл
     //     // ===========================================================
+  });
+
+document
+  .getElementById("orderForm")
+  .addEventListener("submit", function (event) {
+    // Додаємо обробку події на закриття клавіатури
+    setTimeout(function () {
+      document.body.style.position = ""; // Відновлюємо позиціонування, щоб не було проблем із прокруткою
+      document.body.style.height = ""; // Відновлюємо висоту для нормального прокручування
+    }, 300); // Невелика затримка для обробки події після закриття клавіатури
   });
