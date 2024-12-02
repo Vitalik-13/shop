@@ -113,35 +113,97 @@ tabsWrap.addEventListener("click", function (e) {
     });
   }
 });
+
+// -
 let body = document.querySelector(".body");
 let modalWindowWrapper = document.querySelector(".modal-window-wrapper");
 let TobyButton = document.querySelectorAll(".to-buy");
 let closeInput = document.querySelector(".closed-window");
+let Modalarticle = document.querySelector(".article");
+let productArticle = document.querySelectorAll(".centers");
+
 TobyButton.forEach((item) =>
   item.addEventListener("click", function () {
     modalWindowWrapper.classList.add("display-flex");
     body.classList.add("scroll-non");
   })
 );
+
 closeInput.addEventListener("click", function (e) {
   modalWindowWrapper.classList.remove("display-flex");
   body.classList.remove("scroll-non");
 });
+
 modalWindowWrapper.addEventListener("click", function (e) {
   if (e.target === modalWindowWrapper) {
     modalWindowWrapper.classList.remove("display-flex");
     body.classList.remove("scroll-non");
   }
 });
+
 let modalWindowPrice = document.querySelector(".color-red");
-let price = document.querySelectorAll(".red");
+let price = document.querySelectorAll(".new-price");
 let sliderImg = document.querySelectorAll(".slider-img");
 let modalWindowImg = document.querySelector(".img-modal");
 
+let selectedProductId = "";
+
 TobyButton.forEach((itemButton, idx) => {
   itemButton.addEventListener("click", () => {
-    modalWindowPrice.textContent = price[idx].textContent;
+    selectedProductId = itemButton.closest(".content").getAttribute("data-id");
+
+    modalWindowPrice.innerHTML = price[idx].innerHTML;
+    Modalarticle.textContent = productArticle[idx].textContent;
     modalWindowImg.setAttribute("src", sliderImg[idx].getAttribute("src"));
-    modalWindowImg.setAttribute("alt", sliderImg[idx].getAttribute("alt"));
+    // modalWindowImg.setAttribute("alt", sliderImg[idx].getAttribute("alt"));
   });
 });
+
+document
+  .querySelector("#orderForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    // видалити це для первірки
+    console.log("Форма була надіслана");
+    // видалити це для первірки
+
+    const orderData = {
+      id: selectedProductId,
+      article: Modalarticle.textContent.trim(),
+      price: modalWindowPrice.textContent.trim(),
+      name: document.querySelector("#clientName").value.trim(),
+      phone: document.querySelector("#clientPhone").value.trim(),
+      comment: document.querySelector("#clientComment").value.trim(),
+    };
+    // ===========================================================
+    //  після відправки форма закривається, і рядки очищуються, цей код можна буде видалити, це для перевірки
+    console.log("Дані для відправки:", orderData);
+
+    document.querySelector("#orderForm").reset();
+
+    modalWindowWrapper.classList.remove("display-flex");
+    body.classList.remove("scroll-non");
+    //     //  після відправки форма закривається, і рядки очищуються, цей код можна буде видалити, це для перевірки
+    //     // ===========================================================
+
+    //     // ======================================================
+    //     // це розкоментувати, для надсилання даних на php файл
+
+    //     // const form = document.createElement("form");
+    //     // form.method = "POST";
+    //     // form.action = "success-final.php";
+
+    //     // for (const key in orderData) {
+    //     //   const input = document.createElement("input");
+    //     //   input.type = "hidden";
+    //     //   input.name = key;
+    //     //   input.value = orderData[key];
+    //     //   form.appendChild(input);
+    //     // }
+
+    //     //
+    //     // document.body.appendChild(form);
+    //     // form.submit();
+    //     // це розкоментувати, для надсилання даних на php файл
+    //     // ===========================================================
+  });

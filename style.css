@@ -99,16 +99,16 @@ a {
   justify-content: center;
 }
 .form {
-  width: 80%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   gap: 10px 0;
 }
 .form-input {
-  padding: 15px;
+  padding: 10px;
 }
 .form-input::placeholder {
-  font-size: 18px;
+  font-size: 14px;
 }
 .form-button {
   border: none;
@@ -119,10 +119,10 @@ a {
   text-align: center;
 }
 .text-area {
-  min-height: 100px;
+  min-height: 70px;
 }
 .text-area::placeholder {
-  font-size: 22px;
+  font-size: 18px;
   padding: 10px;
 }
 .closed-window {
@@ -139,6 +139,11 @@ a {
 }
 .scroll-non {
   overflow: hidden;
+}
+.article {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
 }
 /* modal-window=================================================================================== */
 /* .header========================================================================================= */
@@ -328,6 +333,10 @@ strong {
   margin-top: 5px;
   text-align: center;
 }
+.centers {
+  margin-top: 5px;
+  text-align: center;
+}
 .prise {
   text-transform: uppercase;
   font-size: 24px;
@@ -395,7 +404,7 @@ strong {
 .advantages-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 25px;
   flex-wrap: wrap;
   margin: 30px 0;
   align-items: baseline;
@@ -559,11 +568,6 @@ strong {
   z-index: 2;
 }
 
-.lazy-wrapper.loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .loader {
   position: absolute;
   top: 5%;
@@ -595,6 +599,10 @@ strong {
 }
 .wpaaaap {
   position: relative;
+}
+.lazy-wrapper.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
 /* ================================================================================================================== */
 @media (max-width: 1000px) {
