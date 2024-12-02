@@ -664,4 +664,10 @@ strong {
   .loader {
     top: 1%;
   }
+  .form-input::placeholder {
+    font-size: 14px;
+  }
+  .text-area::placeholder {
+    font-size: 16px;
+  }
 }
