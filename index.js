@@ -1,4 +1,10 @@
-// Окрема функція для ініціалізації кожного слайдера
+const phoneInput = document.getElementById("clientPhone");
+
+phoneInput.addEventListener("input", (event) => {
+  const input = event.target;
+  input.value = input.value.replace(/[^0-9]/g, "");
+});
+
 const initializeSwiper = (swiperElement) => {
   new Swiper(swiperElement, {
     slidesPerView: 1,
@@ -15,55 +21,44 @@ const initializeSwiper = (swiperElement) => {
   });
 };
 
-// Ініціалізація всіх слайдерів на сторінці при завантаженні
 const initializeAllSwipers = () => {
   const swiperElements = document.querySelectorAll(".swiper");
   swiperElements.forEach((swiperElement) => {
-    initializeSwiper(swiperElement); // Ініціалізуємо кожен слайдер
+    initializeSwiper(swiperElement);
   });
 };
 
-// Функція для завантаження контейнера з затримкою
 const loadContainer = (container) => {
   if (container.dataset.loaded === "false") {
-    // Ініціалізуємо слайдери тільки після того, як контейнер став видимим
     const swiperElements = container.querySelectorAll(".swiper");
     swiperElements.forEach((swiperElement) => {
-      initializeSwiper(swiperElement); // Ініціалізуємо кожен слайдер
+      initializeSwiper(swiperElement);
     });
 
-    // Встановлюємо затримку перед відображенням контенту
     setTimeout(() => {
-      // Відображаємо блоки з контентом після завантаження
-      container.classList.add("loaded"); // Додаємо клас для відображення контенту
+      container.classList.add("loaded");
       container.querySelectorAll(".block-tab").forEach((el) => {
-        el.style.visibility = "visible"; // Відображаємо блоки з контентом
+        el.style.visibility = "visible";
       });
 
-      // Сховуємо лоадер після затримки
-      // container.querySelector(".loader").style.display = "none";
-
-      // Позначаємо, що контент завантажено
       container.dataset.loaded = "true";
-    }, 1000); // Затримка перед відображенням контенту, 3000 мс (3 секунди)
+    }, 1000);
   }
 };
 
-// Налаштовуємо IntersectionObserver для контейнера
 const lazyContainer = document.querySelector(".lazy-wrapper");
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      loadContainer(entry.target); // Завантажуємо контент, коли контейнер з'являється в viewport
-      observer.unobserve(entry.target); // Зупиняємо спостереження
+      loadContainer(entry.target);
+      observer.unobserve(entry.target);
     }
   });
 });
 
 observer.observe(lazyContainer);
 
-// Ініціалізація Swiper для останнього слайдера (окремо)
 let lastSwiper = new Swiper(".lastSwiper", {
   pagination: {
     el: ".swiper-pagination",
@@ -71,8 +66,8 @@ let lastSwiper = new Swiper(".lastSwiper", {
   },
   loop: true,
   autoplay: {
-    delay: 4000, // Затримка між прокрутками (в мілісекундах)
-    disableOnInteraction: false, // Продовжувати автопрокрутку після взаємодії
+    delay: 4000,
+    disableOnInteraction: false,
   },
   navigation: {
     nextEl: ".swiper-button-next",
@@ -80,10 +75,8 @@ let lastSwiper = new Swiper(".lastSwiper", {
   },
 });
 
-// Ініціалізація всіх слайдерів на сторінці
-initializeAllSwipers(); // Викликаємо ініціалізацію слайдерів для всіх елементів на сторінці
+initializeAllSwipers();
 
-// Робота з вкладками
 let tabsWrap = document.querySelector(".tab-title-wrap");
 let tabItem = document.querySelectorAll(".tab-title-item");
 let tabsContent = document.querySelectorAll(".tab-content");
@@ -155,7 +148,6 @@ TobyButton.forEach((itemButton, idx) => {
     modalWindowPrice.innerHTML = price[idx].innerHTML;
     Modalarticle.textContent = productArticle[idx].textContent;
     modalWindowImg.setAttribute("src", sliderImg[idx].getAttribute("src"));
-    // modalWindowImg.setAttribute("alt", sliderImg[idx].getAttribute("alt"));
   });
 });
 
