@@ -38,6 +38,109 @@ a {
 .closed {
   display: none;
 }
+/* modal-window=================================================================================== */
+.modal-window-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.modal-window {
+  position: relative;
+  width: 40%;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal-window-title {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #666;
+  font-size: 24px;
+}
+.img-modal-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  text-align: center;
+}
+.img-modal {
+  width: 100%;
+  object-fit: fill;
+}
+.prise-modal-window {
+  padding: 20px 0;
+  font-size: 22px;
+  font-weight: 500;
+  color: #444;
+}
+.color-red {
+  color: red;
+}
+.form-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+.form-input {
+  padding: 15px;
+}
+.form-input::placeholder {
+  font-size: 18px;
+}
+.form-button {
+  border: none;
+  padding: 20px;
+  font-size: 18px;
+  color: white;
+  background-color: #35b7f5;
+  text-align: center;
+}
+.text-area {
+  min-height: 100px;
+}
+.text-area::placeholder {
+  font-size: 22px;
+  padding: 10px;
+}
+.closed-window {
+  position: absolute;
+  top: 3%;
+  right: 4%;
+  font-size: 22px;
+  color: #444;
+  font-weight: 600;
+  cursor: pointer;
+}
+.display-flex {
+  display: flex;
+}
+.scroll-non {
+  overflow: hidden;
+}
+/* modal-window=================================================================================== */
 /* .header========================================================================================= */
 .header {
   min-height: 105px;
@@ -225,16 +328,18 @@ strong {
   margin-top: 5px;
   text-align: center;
 }
-.red {
-  text-decoration: line-through;
-  font-weight: 200;
-}
 .prise {
   text-transform: uppercase;
   font-size: 24px;
+  /* text-decoration: line-through; */
+}
+.red {
+  text-decoration: line-through;
+  font-weight: 400;
 }
 .prise-container {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
   gap: 0px 50px;
 }
@@ -502,6 +607,19 @@ strong {
 @media (max-width: 800px) {
   .no-wrap {
     flex-wrap: wrap;
+  }
+  .modal-window {
+    margin-top: 50px;
+    width: 90%;
+  }
+  .form {
+    gap: 20px 0;
+  }
+  .text-area {
+    margin-top: 10px;
+  }
+  .modal-window-wrapper {
+    align-items: flex-start;
   }
 }
 @media (max-width: 550px) {

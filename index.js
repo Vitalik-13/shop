@@ -41,7 +41,7 @@ const loadContainer = (container) => {
       });
 
       // Сховуємо лоадер після затримки
-      container.querySelector(".loader").style.display = "none";
+      // container.querySelector(".loader").style.display = "none";
 
       // Позначаємо, що контент завантажено
       container.dataset.loaded = "true";
@@ -112,4 +112,36 @@ tabsWrap.addEventListener("click", function (e) {
       }
     });
   }
+});
+let body = document.querySelector(".body");
+let modalWindowWrapper = document.querySelector(".modal-window-wrapper");
+let TobyButton = document.querySelectorAll(".to-buy");
+let closeInput = document.querySelector(".closed-window");
+TobyButton.forEach((item) =>
+  item.addEventListener("click", function () {
+    modalWindowWrapper.classList.add("display-flex");
+    body.classList.add("scroll-non");
+  })
+);
+closeInput.addEventListener("click", function (e) {
+  modalWindowWrapper.classList.remove("display-flex");
+  body.classList.remove("scroll-non");
+});
+modalWindowWrapper.addEventListener("click", function (e) {
+  if (e.target === modalWindowWrapper) {
+    modalWindowWrapper.classList.remove("display-flex");
+    body.classList.remove("scroll-non");
+  }
+});
+let modalWindowPrice = document.querySelector(".color-red");
+let price = document.querySelectorAll(".red");
+let sliderImg = document.querySelectorAll(".slider-img");
+let modalWindowImg = document.querySelector(".img-modal");
+
+TobyButton.forEach((itemButton, idx) => {
+  itemButton.addEventListener("click", () => {
+    modalWindowPrice.textContent = price[idx].textContent;
+    modalWindowImg.setAttribute("src", sliderImg[idx].getAttribute("src"));
+    modalWindowImg.setAttribute("alt", sliderImg[idx].getAttribute("alt"));
+  });
 });
