@@ -155,7 +155,7 @@ document
 
     if (!selectedProductId) {
       alert("Помилка: ID товару не вибрано!");
-      return; // Зупиняємо виконання, якщо ID товару не вибрано
+      return;
     }
 
     const orderData = {

@@ -54,7 +54,10 @@ a {
   display: none;
 }
 .modal-window {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 40%;
   padding: 20px;
   border-radius: 20px;
@@ -621,7 +624,6 @@ strong {
     flex-wrap: wrap;
   }
   .modal-window {
-    margin: 30px 0;
     width: 90%;
   }
 
