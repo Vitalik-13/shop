@@ -191,3 +191,14 @@ document
   });
 
 // Заборона введення зайвих символів
+document.querySelectorAll(".form-inputt").forEach((input) => {
+  input.addEventListener("focus", () => {
+    document.body.style.transform = "scale(1)";
+    document.body.style.transformOrigin = "center";
+  });
+
+  input.addEventListener("blur", () => {
+    document.body.style.transform = "";
+    document.body.style.transformOrigin = "";
+  });
+});

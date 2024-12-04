@@ -689,6 +689,19 @@ strong {
     width: 360px;
   }
 }
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
+  .form-input {
+    font-size: 16px;
+  }
+}
+.form-input:focus {
+  outline: none;
+  font-size: 16px; /* Переконайтесь, що розмір шрифту відповідає 16px */
+}
+.form-input {
+  -webkit-appearance: none; /* Забирає специфічні стилі iOS */
+  appearance: none;
+}
 .php {
   text-align: center;
 }
