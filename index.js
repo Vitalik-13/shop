@@ -1,10 +1,7 @@
 const phoneInput = document.getElementById("clientPhone");
-
-phoneInput.addEventListener("input", (event) => {
-  const input = event.target;
-  input.value = input.value.replace(/[^0-9]/g, "");
+const mask = new IMask(phoneInput, {
+  mask: "+38 (000)-000-00-00",
 });
-
 const initializeSwiper = (swiperElement) => {
   new Swiper(swiperElement, {
     slidesPerView: 1,
@@ -155,31 +152,28 @@ document
   .querySelector("#orderForm")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-    // видалити це для первірки
-    // console.log("Форма була надіслана");
-    // видалити це для первірки
+
+    if (!selectedProductId) {
+      alert("Помилка: ID товару не вибрано!");
+      return; // Зупиняємо виконання, якщо ID товару не вибрано
+    }
 
     const orderData = {
-      id: selectedProductId,
-      article: Modalarticle.textContent.trim(),
-      price: modalWindowPrice.textContent.trim(),
-      name: document.querySelector("#clientName").value.trim(),
-      phone: document.querySelector("#clientPhone").value.trim(),
+      id: selectedProductId, // ID товару
+      article: Modalarticle.textContent.trim(), // Артикул
+      price: modalWindowPrice.textContent.trim(), // Ціна
+      name: document.querySelector("#clientName").value.trim(), // Ім'я
+      phone: document.querySelector("#clientPhone").value.trim(), // Телефон
     };
-    // ===========================================================
-    //  після відправки форма закривається, і рядки очищуються, цей код можна буде видалити, це для перевірки
-    // console.log("Дані для відправки:", orderData);
-
+    // ==================================================================
+    console.log("Дані для відправки:", orderData); // Для перевірки в консолі (можна видалити)
+    // ==================================================================
+    // Очистка форми після відправки
     document.querySelector("#orderForm").reset();
-
     modalWindowWrapper.classList.remove("display-flex");
     body.classList.remove("scroll-non");
-    //     //  після відправки форма закривається, і рядки очищуються, цей код можна буде видалити, це для перевірки
-    //     // ===========================================================
 
-    //     // ======================================================
-    //     // це розкоментувати, для надсилання даних на php файл
-
+    // Формування та відправка прихованої форми
     const form = document.createElement("form");
     form.method = "POST";
     form.action = "thank-you.php";
@@ -194,16 +188,6 @@ document
 
     document.body.appendChild(form);
     form.submit();
-    //     // це розкоментувати, для надсилання даних на php файл
-    //     // ===========================================================
   });
 
-document
-  .getElementById("orderForm")
-  .addEventListener("submit", function (event) {
-    // Додаємо обробку події на закриття клавіатури
-    setTimeout(function () {
-      document.body.style.position = ""; // Відновлюємо позиціонування, щоб не було проблем із прокруткою
-      document.body.style.height = ""; // Відновлюємо висоту для нормального прокручування
-    }, 300); // Невелика затримка для обробки події після закриття клавіатури
-  });
+// Заборона введення зайвих символів
