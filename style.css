@@ -117,6 +117,11 @@ a {
   color: white;
   background-color: #35b7f5;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.form-button:hover {
+  background-color: #1e90ff;
 }
 .text-area {
   min-height: 70px;
@@ -683,4 +688,33 @@ strong {
   .img-wpar {
     width: 360px;
   }
+}
+.php {
+  text-align: center;
+}
+.php-title {
+  font-size: 34px;
+  font-weight: 600;
+  color: red;
+  margin-top: 30px;
+}
+.php-paragraph {
+  font-size: 18px;
+  margin: 20px 0;
+}
+.link-php {
+  margin: 20px auto;
+  max-width: 250px;
+  display: block;
+  padding: 20px;
+  background-color: #35b7f5;
+  border: 2px solid #026eda;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.link-php:hover {
+  background-color: #026eda;
 }
