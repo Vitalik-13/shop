@@ -209,7 +209,7 @@ a {
       rgba(0, 0, 0, 0.2) 80%,
       rgba(0, 0, 0, 0)
     ),
-    url(./images/2149551400.jpg);
+    url(./images/2149551400.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -457,7 +457,7 @@ strong {
       rgba(0, 0, 0, 0.2) 80%,
       rgba(0, 0, 0, 0)
     ),
-    url(./images/curtain-window.jpg);
+    url(./images/curtain-window.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
